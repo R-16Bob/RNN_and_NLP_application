@@ -3,4 +3,5 @@
 # 目录
 ## 1. [NLP基础：文本处理与词嵌入](Preliminaries/NLP基础：文本处理与词嵌入.md)
 ## 2. [Simple RNN](RNN/Simple_RNN.md) 
+## 3. [LSTM](LSTM/Long_Short_Term_Memory.md)
 
