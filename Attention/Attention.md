@@ -14,7 +14,11 @@
 当Encoder结束工作后，Attention与Decoder同时开始工作。
 - Encoder的每一个状态都需要保留下来，并计算与最后状态s0的相关性
 <img src="Pasted image 20250414153812.png">
-Weight: $$\alpha_i=\mathrm{align}(\mathbf{h}_i,\mathbf{s}_0)$$
+
+Weight: 
+
+$$\alpha_i=\mathrm{align}(\mathbf{h}_i,\mathbf{s}_0)$$
+
 将相关性alpha称作权重，每个alpha都是0到1的实数，所有alpha和为1.
 
 #### 如何计算s0与hi的相关性
@@ -41,16 +45,20 @@ $$[\alpha_1,\cdots,\alpha_m]=\mathrm{Softmax}([\tilde{\alpha}_1,\cdots,\tilde{\a
 $$c_0=\alpha_1h_1+\cdots+\alpha_mh_m.$$
 ### Decoder状态s的更新
 SimpleRNN:
+
 $$s_1=\tanh \left( \mathbf{A^{\prime}}\cdot\begin{bmatrix}
  \mathbf{x}_1^{\prime} \\
  s_0
 \end{bmatrix} +b\right )$$
+
 SimpleRNN+Attention:
+
 $$s_1=\tanh \left( \mathbf{A^{\prime}}\cdot\begin{bmatrix}
  \mathbf{x}_1^{\prime} \\
  s_0\\
  c_0
 \end{bmatrix} +b\right )$$
+
 <img src="Pasted image 20250414161450.png">
 一共计算了多少次权重?
 Decoder的每一个状态都需要重新计算m个权重，所以时间复杂度是mxt，很高。
