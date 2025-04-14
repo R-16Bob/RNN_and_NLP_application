@@ -6,5 +6,6 @@
 ## 3. [LSTM](LSTM/Long_Short_Term_Memory.md)
 ## 4. [Making RNNs more effective](More_effective_RNN/Making_RNNs_more_effective.md)
 ## 5. [Text_Generation](Text_Generation/Text_Generation.md)
-## 6. [Seq2Seq](Seq2Seq/Seq2Seq.md)
+## 6. [Machine Traslation and Seq2Seq](Seq2Seq/Seq2Seq.md)
 ## 7. [Attention](Attention/Attention.md)
+## 8.[Self-Attention](Attention/Self_Attention.md)

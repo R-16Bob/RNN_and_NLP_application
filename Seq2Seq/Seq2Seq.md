@@ -58,4 +58,4 @@ Tokenization可以是char-level或者word-level，这里为了简单使用char-l
 可以进行多种翻译任务，这样Encoder的训练数据变多，效果会更好。
 
 ### 4. Attention
-见下节
+见下节[Attention](../Attention/Attention.md)。
