@@ -9,3 +9,5 @@
 ## 6. [Machine Traslation and Seq2Seq](Seq2Seq/Seq2Seq.md)
 ## 7. [Attention](Attention/Attention.md)
 ## 8.[Self-Attention](Attention/Self_Attention.md)
+## 9. [Transformer_Part1: Attention layer & Self-Attention layer](Transformer/Transformer_Part1.md)
+## 10.[Transformer Part 2: From Shallow to Deep](Transformer/Transformer_Part2.md)
