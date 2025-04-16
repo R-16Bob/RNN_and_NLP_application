@@ -15,9 +15,10 @@ Vaswani, Ashish, et al. "[Attention is all you Need](https://proceedings.neurips
 
 ### 如何搭一个只基于Attention的神经网络？
 <img src="imgs/Pasted image 20250414173225.png">
+
 #### 回顾SimpleRNN+Attention
 - Encoder：将输入的信息(token)压缩到状态向量h中，最后一个状态h_m包含所有信息。
-- Decoder是一个文本生成器，根据状态s生成单词；并将生成的单词作为下一个输入$x^{\prime}$；还需要计算contex vector c，每计算一个状态s就需要计算一个c；c是通过注意力，也就是比较当前状态s与Encoder的每一个状态h的相关性计算权重：
+- Decoder是一个文本生成器，根据状态s生成单词；并将生成的单词作为下一个输入 $$x^{\prime}$$ ；还需要计算contex vector c，每计算一个状态s就需要计算一个c；c是通过注意力，也就是比较当前状态s与Encoder的每一个状态h的相关性计算权重：
 
 $$\alpha_{i,j}=\mathrm{align}(\mathbf{h}_i,\mathbf{s}_j)$$
 计算
@@ -76,8 +77,8 @@ $$c_{:1}=\alpha_{11}v_{:1}+\cdots+\alpha_{m1}v_{:m}=V\alpha_{:1}.$$
 也就是dim（V）x m的矩阵乘 mx1的权重向量alpha_:1得到dim(v) x 1的Context Vector，实际做的就是对V加权平均
 <img src="imgs/Pasted image 20250416161401.png">
 - attention layer的输出: $$C=[c_{:1},\cdots,c_{:t}].$$
-- Here,$$c_{:j}=V\cdot\mathrm{Softmax}(K^Tq_{:j}).$$
-- Thus，c_:j是依赖于$$x^{\prime}_j$$和$$[x_1,x_2,\cdots,x_m]$$的函数。
+- Here, $$c_{:j}=V\cdot\mathrm{Softmax}(K^Tq_{:j}).$$
+- Thus，c_:j是依赖于 $$x^{\prime}_j$$ 和 $$[x_1,x_2,\cdots,x_m]$$ 的函数。
 <img src="imgs/Pasted image 20250416162919.png">
 
 以英语-德语翻译为例，c_:2 能够看到Encoder的所有输入和Decoder的当前输入；将它接入softmax分类器，就可以得到下一个词的预测。
@@ -89,7 +90,7 @@ $$c_{:1}=\alpha_{11}v_{:1}+\cdots+\alpha_{m1}v_{:m}=V\alpha_{:1}.$$
 #### 总结Attention Layer
 - Attention layer: $$C=\mathrm{Attn}(X,X^{\prime}).$$
 	- 其中X为Encoder输入，X'为Decoder输入
-	- 有三个参数矩阵：$$W_Q,W_K,W_V.$$
+	- 有三个参数矩阵: $$W_Q,W_K,W_V.$$
 <img src="imgs/Pasted image 20250416163957.png">
 
 #### Self-Attention without RNN
