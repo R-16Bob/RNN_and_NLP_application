@@ -55,6 +55,7 @@ Transformer的Encoder总共有6个Block，每个Block有两层（多头注意力
 Block的第一层是多头Self-Attention，输出是512维的c1到c_m。
 
 <img src="imgs2/Pasted image 20250420155530.png">
+
 第二层是多头Attention，输入是两个序列，u1到 $u_m$ 和c1到 $c_m$ 
 最上面再加一个Sense，得到:
 
